@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'apt install python3-pip'
-                sh 'pip3 --version'
-                sh 'pip3 install flask'
+                sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
             }
         }
         stage('test') {
