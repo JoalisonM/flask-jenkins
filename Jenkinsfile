@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'pip install --upgrade pip'
-                sh 'pip install virtualenv && virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
+                sh 'pip3 install virtualenv'
+                sh 'virtualenv venv'
+                sh '. venv/bin/activate && pip3 install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt'
             }
         }
         stage('test') {
