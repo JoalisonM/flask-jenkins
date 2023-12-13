@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'pip3 install virtualenv'
                 sh 'virtualenv venv'
-                sh '. venv/bin/activate && pip3 install -r requirements.txt'
+                sh '. venv/bin/activate'
                 sh 'pip3 install -r requirements.txt'
             }
         }
