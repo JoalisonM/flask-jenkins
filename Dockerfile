@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:latest-jdk17
+FROM jenkins/jenkins:lts-jdk17
 
 USER root
 
@@ -14,14 +14,11 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
 
 RUN apt-get update && apt-get install -y docker-ce-cli
 
+RUN apt-get -y install python3-pip
+
 RUN groupadd docker && usermod -aG docker jenkins
 
 RUN usermod -aG root jenkins
-
-RUN apk add docker
-RUN apk add py-pip
-RUN apk add python-dev libffi-dev openssl-dev gcc libc-dev make
-RUN pip install docker-compose
 
 USER jenkins
 
