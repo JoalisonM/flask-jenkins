@@ -3,8 +3,6 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'apk add py-pip'
-                sh 'apk add python-dev libffi-dev openssl-dev gcc libc-dev make'
                 sh 'virtualenv venv'
                 sh 'source venv/bin/activate'
                 sh 'pip install flask'
