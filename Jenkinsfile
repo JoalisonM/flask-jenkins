@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'sudo -H pip3 install --upgrade pip'
+                sh 'pip3 install --upgrade pip'
                 sh 'pip3 install virtualenv'
                 sh 'virtualenv venv'
                 sh '. venv/bin/activate'
