@@ -6,7 +6,6 @@ pipeline {
                 script {
                     sh 'python -m venv venv'
                     sh '. venv/bin/activate'
-                    sh 'pip install --upgrade pip'
                     sh 'pip install Flask'
                 }
             }
