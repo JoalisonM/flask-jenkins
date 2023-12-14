@@ -4,8 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python -m venv venv'
-                sh '. venv/bin/activate'
-                sh 'pip install Flask'
+                sh '. venv/bin/activate && pip install Flask'
             }
         }
         stage('test') {
