@@ -3,12 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python3 --version'
+                sh 'python3 -m venv .venv'
+                sh 'source .venv/bin/activate'
+                sh 'pip3 install -r requirements.txt'
             }
         }
         stage('test') {
             steps {
-                sh 'python test.py'
+                sh 'python3 test.py'
             }
         }
     }
