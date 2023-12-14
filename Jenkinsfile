@@ -5,8 +5,7 @@ pipeline {
             steps {
                 sh 'python -m venv venv'
                 sh '. venv/bin/activate'
-                sh 'pip install flask'
-                sh 'pip install xmlrunner'
+                sh 'pip install -r --user requirements.txt'
             }
         }
         stage('test') {
