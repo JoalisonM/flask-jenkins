@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python3 -m venv .venv'
-                sh 'source .venv/bin/activate'
+                sh 'apt install python3-virtualenv'
+                sh 'virtualenv venv'
                 sh 'pip3 install -r requirements.txt'
             }
         }
