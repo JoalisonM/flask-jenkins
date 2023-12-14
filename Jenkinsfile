@@ -9,7 +9,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'python3 test.py'
+                sh '. venv/bin/activate && python3 test.py'
             }
         }
     }
